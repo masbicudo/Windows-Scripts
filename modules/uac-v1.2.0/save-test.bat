@@ -1,0 +1,1 @@
+call test.bat > test-result.txt

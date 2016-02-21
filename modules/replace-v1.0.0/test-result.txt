@@ -1,0 +1,22 @@
+SOURCE
+XXX            
+Miguel Angelo  
+XXX            
+Santos Bicudo  
+XXX            
+
+
+TEST #1
+ABC            
+Miguel Angelo  
+ABC            
+Santos Bicudo  
+ABC            
+
+
+TEST #2
+XX             
+Miguel Angelo  
+ X             
+Santos Bicudo  
+ XX            

@@ -1,0 +1,8 @@
+var res1 = jsimport("import.test.res1.js.dat");
+var res2 = jsimport("import.test.res2.js.dat");
+
+res1.inc();
+res2.inc();
+
+WScript.Echo(res1.get());
+WScript.Echo(res2.get());

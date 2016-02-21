@@ -1,0 +1,14 @@
+<package>
+    <job>
+        <script language="JScript">
+            function CreateList() {
+                return [1,"Miguel"];
+            }
+        </script>
+
+        <script language="VBScript">
+            Set x = CreateList()
+            WScript.Echo x.[0], x.[1], TypeName(x)
+        </script>
+    </job>
+</package>

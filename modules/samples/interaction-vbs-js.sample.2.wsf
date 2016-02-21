@@ -1,0 +1,15 @@
+<package>
+    <job>
+        <script language="JScript">
+            function CreateCustomObject() {
+                return {nome:""};
+            }
+        </script>
+
+        <script language="VBScript">
+            Set x = CreateCustomObject()
+            x.Nome = "Miguel"
+            WScript.Echo x.Nome, TypeName(x)
+        </script>
+    </job>
+</package>

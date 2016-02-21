@@ -1,0 +1,1 @@
+_export = jsimport("import.test.res3.js.dat");

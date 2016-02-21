@@ -1,0 +1,19 @@
+Testing relations between mimes and extensions
+  exe is application/octet-stream: F
+  bin is application/octet-stream: T
+  jpg is application/octet-stream: F
+  jpg is image/jpeg: T
+
+Testing relations between mimes
+  image/jpeg => image/jpeg
+  text/plain => text/plain
+  application/octet-stream => application/octet-stream
+  application/x-ms-wmz => application/x-ms-wmz application/x-msmetafile
+  application/x-msmetafile => application/x-msmetafile application/x-ms-wmz
+  image/vnd.dvb.subtitle => image/vnd.dvb.subtitle text/vnd.dvb.subtitle
+  text/vnd.dvb.subtitle => text/vnd.dvb.subtitle image/vnd.dvb.subtitle
+
+Testing relations between extensions
+  image/jpeg => jpeg jpg jpe 
+  text/plain => txt text conf def list log in 
+  application/octet-stream => bin dms lrf mar so dist distz pkg bpk dump elc deploy    

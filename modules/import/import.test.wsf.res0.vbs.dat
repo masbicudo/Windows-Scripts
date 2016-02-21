@@ -1,0 +1,8 @@
+Set res1 = jsimport("import.test.wsf.res1.js.dat")
+Set res2 = VBImport("import.test.wsf.res2.vbs.dat")
+
+res1.Increment()
+res2.Increment()
+
+WScript.Echo res1.GetValue()
+WScript.Echo res2.GetValue()

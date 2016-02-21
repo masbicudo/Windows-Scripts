@@ -1,0 +1,11 @@
+var x = 10;
+
+function increment(){
+    return x++;
+}
+
+function getValue(){
+    return x;
+}
+
+_export = { increment: increment, getValue: getValue };

@@ -1,0 +1,8 @@
+Set res1 = VBImport("import.test.res1.vbs.dat")
+Set res2 = VBImport("import.test.res2.vbs.dat")
+
+res1.Increment()
+res2.Increment()
+
+WScript.Echo res1.GetValue()
+WScript.Echo res2.GetValue()

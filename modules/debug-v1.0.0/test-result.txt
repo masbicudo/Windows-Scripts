@@ -1,0 +1,10 @@
+Debug test message
+Enter TestBlock(x = 10)
+    Inside test block
+    Enter TestBlock2
+        Inside test block
+        ERROR: Tried to exit WrongBlock but scope is TestBlock2
+        ERROR: Tried to exit WrongBlock but scope is TestBlock
+        ERROR: Tried to exit WrongBlock but scope was not found
+        ERROR: Tried to exit TestBlock but scope is TestBlock2
+Exit TestBlock = 40

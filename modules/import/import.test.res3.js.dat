@@ -1,0 +1,11 @@
+var x = 10;
+
+function inc(){
+    return x++;
+}
+
+function get(){
+    return x;
+}
+
+_export = { inc: inc, get: get };

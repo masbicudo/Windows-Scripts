@@ -1,0 +1,190 @@
+P gina de c¢digo ativa: 1250
+Enter test.1.1.vbs
+  Elevated: Falso
+  Enter Elevate
+    Enter ElevateCore(wait = Falso, allowNonElevated = Falso)
+      Enter SignalExecution
+      Exit SignalExecution
+      Enter FixCurrentDirectory
+        Nargs.Exists('UAC-Fix-CurrentDirectory') Falso 
+      Exit FixCurrentDirectory = Falso
+      mustRestart Falso
+      Recalling the script with 'runas' verb
+        AllArgs =  /UAC-Fix-CurrentDirectory:"C:\Masb-git\my-work\Configura‡äes\WinSetup\modules\uac-v1.1.1"
+      Quit: uac.vbs
+Enter test.1.2.vbs
+  Elevated: Falso
+  Enter FixCurrentDirectory
+    Nargs.Exists('UAC-Fix-CurrentDirectory') Falso 
+  Exit FixCurrentDirectory = Falso
+  Enter Elevate
+    Enter ElevateCore(wait = Falso, allowNonElevated = Falso)
+      Enter SignalExecution
+      Exit SignalExecution
+      Enter FixCurrentDirectory
+      Exit FixCurrentDirectory = Falso
+      mustRestart Falso
+      Recalling the script with 'runas' verb
+        AllArgs =  /UAC-Fix-CurrentDirectory:"C:\Masb-git\my-work\Configura‡äes\WinSetup\modules\uac-v1.1.1"
+      Quit: uac.vbs
+Enter test.1.3.vbs
+  Elevated: Falso
+  Enter ResetCurrentDirectory
+    FSO.FileExists('cscript.exe') Falso
+  Exit ResetCurrentDirectory = Falso
+  Enter Elevate
+    Enter ElevateCore(wait = Falso, allowNonElevated = Falso)
+      Enter SignalExecution
+      Exit SignalExecution
+      Enter FixCurrentDirectory
+      Exit FixCurrentDirectory = Falso
+      mustRestart Falso
+      Recalling the script with 'runas' verb
+        AllArgs = 
+      Quit: uac.vbs
+Enter test.2.1.vbs
+  Elevated: Falso
+  Enter ElevateWait
+    Enter ElevateCore(wait = Verdadeiro, allowNonElevated = Falso)
+      Enter SignalExecution
+      Exit SignalExecution
+      Enter FixCurrentDirectory
+        Nargs.Exists('UAC-Fix-CurrentDirectory') Falso 
+      Exit FixCurrentDirectory = Falso
+      mustRestart Falso
+      Enter CreateSignal
+        guid = CreateGUID ' E0ED38B2C75D4992A5468A91A87591D3
+        signalFile = C:\Users\MIGUEL~1\AppData\Local\Temp\E0ED38B2C75D4992A5468A91A87591D3
+      Exit CreateSignal
+      Recalling the script with 'runas' verb
+        AllArgs =  /UAC-Fix-CurrentDirectory:"C:\Masb-git\my-work\Configura‡äes\WinSetup\modules\uac-v1.1.1" /UAC-Signal-File-GUID:E0ED38B2C75D4992A5468A91A87591D3
+      Enter WaitForExitSignal(guid = E0ED38B2C75D4992A5468A91A87591D3)
+        Enter Read Start Msg
+        Exit Read Start Msg
+        Enter Read Exit Msg
+        Exit Read Exit Msg
+      Exit WaitForExitSignal = Verdadeiro
+      Quit: uac.vbs
+Enter test.2.2.vbs
+  Elevated: Falso
+  Enter FixCurrentDirectory
+    Nargs.Exists('UAC-Fix-CurrentDirectory') Falso 
+  Exit FixCurrentDirectory = Falso
+  Enter ElevateWait
+    Enter ElevateCore(wait = Verdadeiro, allowNonElevated = Falso)
+      Enter SignalExecution
+      Exit SignalExecution
+      Enter FixCurrentDirectory
+      Exit FixCurrentDirectory = Falso
+      mustRestart Falso
+      Enter CreateSignal
+        guid = CreateGUID ' 62CAE792975943058500C49010C33B6B
+        signalFile = C:\Users\MIGUEL~1\AppData\Local\Temp\62CAE792975943058500C49010C33B6B
+      Exit CreateSignal
+      Recalling the script with 'runas' verb
+        AllArgs =  /UAC-Fix-CurrentDirectory:"C:\Masb-git\my-work\Configura‡äes\WinSetup\modules\uac-v1.1.1" /UAC-Signal-File-GUID:62CAE792975943058500C49010C33B6B
+      Enter WaitForExitSignal(guid = 62CAE792975943058500C49010C33B6B)
+        Enter Read Start Msg
+        Exit Read Start Msg
+        Enter Read Exit Msg
+        Exit Read Exit Msg
+      Exit WaitForExitSignal = Verdadeiro
+      Quit: uac.vbs
+Enter test.2.3.vbs
+  Elevated: Falso
+  Enter ResetCurrentDirectory
+    FSO.FileExists('cscript.exe') Falso
+  Exit ResetCurrentDirectory = Falso
+  Enter ElevateWait
+    Enter ElevateCore(wait = Verdadeiro, allowNonElevated = Falso)
+      Enter SignalExecution
+      Exit SignalExecution
+      Enter FixCurrentDirectory
+      Exit FixCurrentDirectory = Falso
+      mustRestart Falso
+      Enter CreateSignal
+        guid = CreateGUID ' D500B28CC8D14BADB4E78B86C0698CD1
+        signalFile = C:\Users\MIGUEL~1\AppData\Local\Temp\D500B28CC8D14BADB4E78B86C0698CD1
+      Exit CreateSignal
+      Recalling the script with 'runas' verb
+        AllArgs =  /UAC-Signal-File-GUID:D500B28CC8D14BADB4E78B86C0698CD1
+      Enter WaitForExitSignal(guid = D500B28CC8D14BADB4E78B86C0698CD1)
+        Enter Read Start Msg
+        Exit Read Start Msg
+        Enter Read Exit Msg
+        Exit Read Exit Msg
+      Exit WaitForExitSignal = Verdadeiro
+      Quit: uac.vbs
+Enter test.3.1.vbs
+  Elevated: Falso
+  Enter TryElevate
+    Enter ElevateCore(wait = Verdadeiro, allowNonElevated = Verdadeiro)
+      Enter SignalExecution
+      Exit SignalExecution
+      Enter FixCurrentDirectory
+        Nargs.Exists('UAC-Fix-CurrentDirectory') Falso 
+      Exit FixCurrentDirectory = Falso
+      mustRestart Falso
+      Enter CreateSignal
+        guid = CreateGUID ' 5F03D7C6A34C4AB7B276F165307FD0F4
+        signalFile = C:\Users\MIGUEL~1\AppData\Local\Temp\5F03D7C6A34C4AB7B276F165307FD0F4
+      Exit CreateSignal
+      Recalling the script with 'runas' verb
+        AllArgs =  /UAC-Fix-CurrentDirectory:"C:\Masb-git\my-work\Configura‡äes\WinSetup\modules\uac-v1.1.1" /UAC-Signal-File-GUID:5F03D7C6A34C4AB7B276F165307FD0F4
+      Enter WaitForExitSignal(guid = 5F03D7C6A34C4AB7B276F165307FD0F4)
+        Enter Read Start Msg
+        Exit Read Start Msg
+        Enter Read Exit Msg
+        Exit Read Exit Msg
+      Exit WaitForExitSignal = Verdadeiro
+      Quit: uac.vbs
+Enter test.3.2.vbs
+  Elevated: Falso
+  Enter FixCurrentDirectory
+    Nargs.Exists('UAC-Fix-CurrentDirectory') Falso 
+  Exit FixCurrentDirectory = Falso
+  Enter TryElevate
+    Enter ElevateCore(wait = Verdadeiro, allowNonElevated = Verdadeiro)
+      Enter SignalExecution
+      Exit SignalExecution
+      Enter FixCurrentDirectory
+      Exit FixCurrentDirectory = Falso
+      mustRestart Falso
+      Enter CreateSignal
+        guid = CreateGUID ' 291E64C4D03946EE8A42522E529B337B
+        signalFile = C:\Users\MIGUEL~1\AppData\Local\Temp\291E64C4D03946EE8A42522E529B337B
+      Exit CreateSignal
+      Recalling the script with 'runas' verb
+        AllArgs =  /UAC-Fix-CurrentDirectory:"C:\Masb-git\my-work\Configura‡äes\WinSetup\modules\uac-v1.1.1" /UAC-Signal-File-GUID:291E64C4D03946EE8A42522E529B337B
+      Enter WaitForExitSignal(guid = 291E64C4D03946EE8A42522E529B337B)
+        Enter Read Start Msg
+        Exit Read Start Msg
+        Enter Read Exit Msg
+        Exit Read Exit Msg
+      Exit WaitForExitSignal = Verdadeiro
+      Quit: uac.vbs
+Enter test.3.3.vbs
+  Elevated: Falso
+  Enter ResetCurrentDirectory
+    FSO.FileExists('cscript.exe') Falso
+  Exit ResetCurrentDirectory = Falso
+  Enter TryElevate
+    Enter ElevateCore(wait = Verdadeiro, allowNonElevated = Verdadeiro)
+      Enter SignalExecution
+      Exit SignalExecution
+      Enter FixCurrentDirectory
+      Exit FixCurrentDirectory = Falso
+      mustRestart Falso
+      Enter CreateSignal
+        guid = CreateGUID ' 737B6AF45CED4E3C83D286DAC782AE07
+        signalFile = C:\Users\MIGUEL~1\AppData\Local\Temp\737B6AF45CED4E3C83D286DAC782AE07
+      Exit CreateSignal
+      Recalling the script with 'runas' verb
+        AllArgs =  /UAC-Signal-File-GUID:737B6AF45CED4E3C83D286DAC782AE07
+      Enter WaitForExitSignal(guid = 737B6AF45CED4E3C83D286DAC782AE07)
+        Enter Read Start Msg
+        Exit Read Start Msg
+        Enter Read Exit Msg
+        Exit Read Exit Msg
+      Exit WaitForExitSignal = Verdadeiro
+      Quit: uac.vbs

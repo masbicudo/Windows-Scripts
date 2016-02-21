@@ -1,0 +1,18 @@
+<package>
+  <job>
+    <script language="JScript">
+      function jsimport(t){var r=jsimport.list=jsimport.list||{};if(r[t])return r[t];
+      var e=WScript.CreateObject("Scripting.FileSystemObject").OpenTextFile(t,1);
+      try{var i=e_impjs(e.ReadAll());return r[t]=i,i}finally{e.close()}}
+      function e_impjs(s){var _export={};return eval(s),_export}
+    </script>
+    <script language="VBScript">
+      Dim VBImport_L:Function VBImport(From)
+      If Not IsObject(VBImport_L) Then Set VBImport_L=CreateObject("Scripting.Dictionary")
+      If VBImport_L.Exists(From) Then Set VBImport=VBImport_L.Item(From) Else Dim FileStream:_
+      Set FileStream=WScript.CreateObject("Scripting.FileSystemObject").OpenTextFile(From, 1):_
+      Set VBImport=E_ImpVb(FileStream.ReadAll()):VBImport_L.Add From,VBImport:FileStream.Close()
+      End Function:Function E_ImpVb(S):Set Export=Nothing:Execute S:Set E_ImpVb=Export:End Function
+    </script>
+  </job>
+</package>

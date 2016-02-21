@@ -1,0 +1,1 @@
+_export = jsimport("import.test.wsf.res3.js.dat");

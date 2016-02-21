@@ -1,0 +1,56 @@
+Elevated: Verdadeiro
+Enter ElevateWait
+  Enter ElevateCore(wait = Verdadeiro)
+    Enter SignalExecution
+    Exit SignalExecution
+    Enter FixCurrentDirectory
+      Nargs.Exists('UAC-Fix-CurrentDirectory') Falso 
+      FSO.FileExists('cscript.exe') Falso
+    Exit FixCurrentDirectory = Falso
+    mustRestart Falso
+  Exit ElevateCore
+Exit ElevateWait
+Elevated code running. Waiting 5 seconds.
+Elevated: Verdadeiro
+Enter FixCurrentDirectory
+  Nargs.Exists('UAC-Fix-CurrentDirectory') Falso 
+  FSO.FileExists('cscript.exe') Falso
+Exit FixCurrentDirectory = Falso
+Enter ElevateWait
+  Enter ElevateCore(wait = Verdadeiro)
+    Enter SignalExecution
+    Exit SignalExecution
+    Enter FixCurrentDirectory
+    Exit FixCurrentDirectory
+    mustRestart 
+  Exit ElevateCore
+Exit ElevateWait
+Elevated code running. Waiting 5 seconds.
+Elevated: Verdadeiro
+Enter Elevate
+  Enter ElevateCore(wait = Falso)
+    Enter SignalExecution
+    Exit SignalExecution
+    Enter FixCurrentDirectory
+      Nargs.Exists('UAC-Fix-CurrentDirectory') Falso 
+      FSO.FileExists('cscript.exe') Falso
+    Exit FixCurrentDirectory = Falso
+    mustRestart Falso
+  Exit ElevateCore
+Exit Elevate
+Elevated code running. Waiting 5 seconds.
+Elevated: Verdadeiro
+Enter FixCurrentDirectory
+  Nargs.Exists('UAC-Fix-CurrentDirectory') Falso 
+  FSO.FileExists('cscript.exe') Falso
+Exit FixCurrentDirectory = Falso
+Enter Elevate
+  Enter ElevateCore(wait = Falso)
+    Enter SignalExecution
+    Exit SignalExecution
+    Enter FixCurrentDirectory
+    Exit FixCurrentDirectory
+    mustRestart 
+  Exit ElevateCore
+Exit Elevate
+Elevated code running. Waiting 5 seconds.

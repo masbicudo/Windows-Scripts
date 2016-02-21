@@ -1,0 +1,29 @@
+<package>
+    <job>
+        <script language="JScript">
+/** IMPORT.JS - MINIFIED VERSION **/
+function jsimport(f){var r=jsimport.items=jsimport.items||{};if(r[f])return r[f];
+var fso=WScript.CreateObject("Scripting.FileSystemObject"),e=fso.OpenTextFile(
+fso.BuildPath(fso.GetFile(WScript.ScriptFullName).ParentFolder,f),1);
+try{var i=e_impjs(e.ReadAll());return r[f]=i,i}finally{e.close()}}
+function e_impjs(s){var _export={};return eval(s),_export}
+/** END IMPORT.JS **/
+        </script>
+
+        <script language="VBScript">
+''' IMPORT.VBS - MINIFIED VERSION '''
+Dim VBImport_Items:Function VBImport(F)
+If Not IsObject(VBImport_Items)Then Set VBImport_Items=CreateObject("Scripting.Dictionary")
+If VBImport_Items.Exists(F)Then Set VBImport=VBImport_Items.Item(F)Else Set FSO=WScript.CreateObject(_
+"Scripting.FileSystemObject"):Set FS=FSO.OpenTextFile(FSO.BuildPath(FSO.GetFile(WScript.ScriptFullName _
+).ParentFolder,F),1):Set VBImport=E_ImpVb(FS.ReadAll()):VBImport_Items.Add F,VBImport:FS.Close()
+End Function:Function E_ImpVb(S):Set Export=Nothing:Execute S:Set E_ImpVb=Export:End Function
+''' END IMPORT.VBS '''
+        </script>
+
+        <script language="JScript">
+VBImport("import.test.wsf.res0.vbs.dat");
+        </script>
+
+    </job>
+</package>

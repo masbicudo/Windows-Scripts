@@ -1,0 +1,31 @@
+<package>
+    <job>
+        <script language="JScript">
+            // A demonstration "class"
+            function WorkstationClass() {
+                var os = "Windows XP";
+
+                this.getOperatingSystem = function() {
+                    return os;
+                }
+            }
+
+            function CreateWorkstation() {
+                return new WorkstationClass();
+            }
+        </script>
+
+        <script language="VBScript">
+            Dim workstation
+
+            '// This assignment causes an error.
+            '// Set workstation = New WorkstationClass()
+
+            '// This works!
+            Set workstation = CreateWorkstation()
+
+            '// Prints "Windows XP"
+            WScript.Echo workstation.getOperatingSystem()
+        </script>
+    </job>
+</package>

@@ -1,0 +1,2 @@
+dssee_setup_x64_v011_signed.exe
+Name with spaces.txt

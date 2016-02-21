@@ -1,0 +1,19 @@
+Class Test3
+
+    Private x
+    Private Sub Class_Initialize()
+    	x = 10
+    End Sub
+
+    Function Increment()
+        Increment = x
+        x = x + 1
+    End Function
+
+    Function GetValue()
+        GetValue = x
+    End Function
+
+End Class
+
+Set Export = New Test3
