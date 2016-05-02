@@ -1,5 +1,5 @@
 :::::::::::::::::::::::::::::::::::::::::
-:: Automatically check & get admin rights
+:: AutomatiGOTOy check & get admin rights
 :::::::::::::::::::::::::::::::::::::::::
 @echo off
 CLS
@@ -43,34 +43,70 @@ cd /d %~dp0
 CLS
 rem Searching "windirstat.exe" in common locations
 if exist "%ProgramFiles%\WinDirStat\windirstat.exe" (
-    call :reg "%ProgramFiles%\WinDirStat\windirstat.exe"
-
-) else if exist "%ProgramFiles(x86)%\WinDirStat\windirstat.exe" (
-    call :reg "%ProgramFiles(x86)%\WinDirStat\windirstat.exe"
-
-) else if exist "%USERPROFILE%\PortableApps\WinDirStatPortable\App\WinDirStat\windirstat.exe" (
-    call :reg "%USERPROFILE%\PortableApps\WinDirStatPortable\App\WinDirStat\windirstat.exe"
-
-) else (
-    set /p __pathName=Enter "windirstat.exe" path:%=%
-    if exist "%__pathName%\windirstat.exe" (
-        call :reg "%__pathName%\windirstat.exe"
-
-    ) else if exist "%__pathName%windirstat.exe" (
-        call :reg "%__pathName%windirstat.exe"
-
-    ) else if exist "%__pathName%" (
-        call :reg "%__pathName%"
-    )
+    CALL :reg "%ProgramFiles%\WinDirStat\windirstat.exe"
+    GOTO :finished
 )
+if exist "%ProgramFiles(x86)%\WinDirStat\windirstat.exe" (
+    CALL :reg "%ProgramFiles(x86)%\WinDirStat\windirstat.exe"
+    GOTO :finished
+)
+if exist "%USERPROFILE%\PortableApps\WinDirStatPortable\App\WinDirStat\windirstat.exe" (
+    CALL :reg "%USERPROFILE%\PortableApps\WinDirStatPortable\App\WinDirStat\windirstat.exe"
+    GOTO :finished
+)
+set /p __pathName=Enter "windirstat.exe" path: %=%
+if exist "%__pathName%\windirstat.exe" (
+    CALL :reg "%__pathName%\windirstat.exe"
+    GOTO :finished
+)
+if exist "%__pathName%windirstat.exe" (
+    CALL :reg "%__pathName%windirstat.exe"
+    GOTO :finished
+)
+if exist "%__pathName%\WinDirStatPortable\App\WinDirStat\windirstat.exe" (
+    CALL :reg "%__pathName%\WinDirStatPortable\App\WinDirStat\windirstat.exe"
+    GOTO :finished
+)
+if exist "%__pathName%WinDirStatPortable\App\WinDirStat\windirstat.exe" (
+    CALL :reg "%__pathName%WinDirStatPortable\App\WinDirStat\windirstat.exe"
+    GOTO :finished
+)
+if exist "%__pathName%\App\WinDirStat\windirstat.exe" (
+    CALL :reg "%__pathName%\App\WinDirStat\windirstat.exe"
+    GOTO :finished
+)
+if exist "%__pathName%App\WinDirStat\windirstat.exe" (
+    CALL :reg "%__pathName%App\WinDirStat\windirstat.exe"
+    GOTO :finished
+)
+if exist "%__pathName%\WinDirStat\windirstat.exe" (
+    CALL :reg "%__pathName%\WinDirStat\windirstat.exe"
+    GOTO :finished
+)
+if exist "%__pathName%WinDirStat\windirstat.exe" (
+    CALL :reg "%__pathName%WinDirStat\windirstat.exe"
+    GOTO :finished
+)
+if exist "%__pathName%" (
+    CALL :reg "%__pathName%"
+    GOTO :finished
+)
+
+:finished
+SET | FINDSTR /B "%1=" 1>nul 2>nul && echo.WinDirStat was not found
+set __path=
 goto :eof
 
 :reg
 
-echo %1
+echo.Found: %1
 
 set __path=%1
 set __path=%__path:"=\"%
+
+REG ADD "HKCR\Directory\Background\shell\windirstat" /ve /d "WinDirStat Here" /f
+REG ADD "HKCR\Directory\Background\shell\windirstat\command" /ve /d "%__path% \"%%V\"" /f
+REG ADD "HKCR\Directory\Background\shell\windirstat" /v "Icon" /d "%__path%,0" /f
 
 REG ADD "HKCR\Directory\shell\windirstat" /ve /d "WinDirStat Here" /f
 REG ADD "HKCR\Directory\shell\windirstat\command" /ve /d "%__path% \"%%1\"" /f
